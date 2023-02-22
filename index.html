@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chatbot sencillo con BotUI</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/botui/build/botui.min.css">
+    <style>
+      body {
+        background-color: #f8f8f8;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+      }
+      
+      #botui-app {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        margin: 50px auto;
+        max-width: 500px;
+        padding: 20px;
+      }
+      
+      img {
+        display: block;
+        margin: 20px auto;
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="botui-app"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/botui/build/botui.min.js"></script>
+    <script>
+      (function() {
+        'use strict';
+
+        const botui = new BotUI('botui-app');
+
+        const welcomeMessage = {
+          delay: 1000,
+          content: '¡Hola! ¿En qué puedo ayudarte?'
+        };
+
+        const noAnswerMessage = {
+          delay: 1000,
+          content: 'Lo siento, no puedo ayudarte en este momento.'
+        };
+
+        const greetings = [
+          '¡Hola!',
+          '¡Bienvenido!',
+          '¡Buenas!',
+          '¡Hola! ¿Cómo estás?',
+          '¡Hola! ¿En qué puedo ayudarte?'
+        ];
+
+        const thanks = [
+          'De nada',
+          '¡Un placer ayudarte!',
+          '¡Siempre estoy aquí para ayudarte!',
+          'No hay problema',
+          '¡Siempre a la orden!'
+        ];
+
+        const options = [
+          '¿Qué es tu nombre?',
+          '¿Dónde estás ubicado?',
+          '¿En qué puedo ayudarte?',
+          '¿Cuáles son tus horarios de atención?',
+          '¿Cómo puedo contactarte?',
+          '¿Cuál es tu página web?',
+          '¿Aceptas pagos con tarjeta de crédito?',
+          '¿Tienes alguna promoción?',
+          '¿Ofreces algún descuento?',
+          '¿Tienes algún cupón de descuento?',
+          '¿Cuál es tu política de devoluciones?',
+          '¿Cuál es el plazo de entrega?',
+          '¿Puedo cancelar mi pedido?',
+          '¿Cómo puedo rastrear mi pedido?',
+          '¿Puedo cambiar mi dirección de envío?',
+          '¿Tienen tienda física?',
+          '¿Cuál es tu producto más vendido?',
+          '¿Tienes productos veganos?',
+          '¿Haces envíos internacionales?',
+          '¿Qué métodos de pago aceptas?',
+          '¿Puedo solicitar una muestra gratuita?',
+          '¿Tienes alguna recomendación de producto para mí?'
+        ];
+
+        const responses = [
+          'Mi nombre es BotUI',
+          'Estoy ubicado en la nube',
+          'Puedo ayudarte con información sobre nuestros
